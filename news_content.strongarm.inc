@@ -15,39 +15,20 @@ function news_content_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__news_post';
   $strongarm->value = array(
-    'view_modes' => array(
-      'teaser' => array(
-        'custom_settings' => TRUE,
-      ),
-      'full' => array(
-        'custom_settings' => FALSE,
-      ),
-      'rss' => array(
-        'custom_settings' => FALSE,
-      ),
-      'search_index' => array(
-        'custom_settings' => FALSE,
-      ),
-      'search_result' => array(
-        'custom_settings' => FALSE,
-      ),
-      'token' => array(
-        'custom_settings' => FALSE,
-      ),
-    ),
+    'view_modes' => array(),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '5',
+          'weight' => '7',
         ),
         'redirect' => array(
-          'weight' => '4',
+          'weight' => '6',
         ),
         'xmlsitemap' => array(
-          'weight' => '3',
+          'weight' => '5',
         ),
       ),
       'display' => array(),

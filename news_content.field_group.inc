@@ -13,30 +13,31 @@ function news_content_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_content|node|news_post|form';
-  $field_group->group_name = 'group_content';
+  $field_group->identifier = 'group_attachments|node|news_post|form';
+  $field_group->group_name = 'group_attachments';
   $field_group->entity_type = 'node';
   $field_group->bundle = 'news_post';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Content',
-    'weight' => '0',
+    'label' => 'Attachments',
+    'weight' => '3',
     'children' => array(
-      0 => 'field_body_news',
-      1 => 'title',
+      0 => 'field_file_asset',
+      1 => 'field_video_asset',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Attachments',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-content field-group-tab',
         'required_fields' => 1,
+        'classes' => 'large-9 medium-8 small-12 columns left',
+        'description' => '',
       ),
+      'formatter' => 'collapsed',
     ),
   );
-  $export['group_content|node|news_post|form'] = $field_group;
+  $export['group_attachments|node|news_post|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -51,7 +52,37 @@ function news_content_field_group_info() {
     'label' => 'Imagery',
     'weight' => '2',
     'children' => array(
-      0 => 'field_feature_image_news_post',
+      0 => 'field_featured_image',
+      1 => 'field_photo_gallery',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Imagery',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'large-9 medium-8 small-12 columns left',
+        'description' => '',
+      ),
+      'formatter' => 'collapsed',
+    ),
+  );
+  $export['group_imagery|node|news_post|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_meta|node|news_post|form';
+  $field_group->group_name = 'group_meta';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'news_post';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Meta Tags',
+    'weight' => '100',
+    'children' => array(
+      0 => 'field_meta_description',
+      1 => 'field_meta_keywords',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -63,7 +94,36 @@ function news_content_field_group_info() {
       ),
     ),
   );
-  $export['group_imagery|node|news_post|form'] = $field_group;
+  $export['group_meta|node|news_post|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_news_content|node|news_post|form';
+  $field_group->group_name = 'group_news_content';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'news_post';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'News Content',
+    'weight' => '0',
+    'children' => array(
+      0 => 'body',
+      1 => 'title',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'News Content',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'large-9 medium-8 small-12 columns left',
+        'description' => '',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $export['group_news_content|node|news_post|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -79,16 +139,16 @@ function news_content_field_group_info() {
     'weight' => '1',
     'children' => array(
       0 => 'field_category',
-      1 => 'field_featured_news_post',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Organization',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-organization field-group-tab',
         'required_fields' => 1,
+        'classes' => 'large-9 medium-8 small-12 columns left',
+        'description' => '',
       ),
+      'formatter' => 'collapsed',
     ),
   );
   $export['group_organization|node|news_post|form'] = $field_group;

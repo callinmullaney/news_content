@@ -10,21 +10,15 @@
 function news_content_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_body_news'
-  $field_bases['field_body_news'] = array(
+  // Exported field_base: 'body'
+  $field_bases['body'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_body_news',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
+    'entity_types' => array(
+      0 => 'node',
     ),
+    'field_name' => 'body',
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -44,14 +38,6 @@ function news_content_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_category',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -71,60 +57,180 @@ function news_content_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_feature_image_news_post'
-  $field_bases['field_feature_image_news_post'] = array(
+  // Exported field_base: 'field_featured_image'
+  $field_bases['field_featured_image'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_feature_image_news_post',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
+    'field_name' => 'field_featured_image',
     'indexes' => array(
-      'fid' => array(
-        0 => 'fid',
+      'target_id' => array(
+        0 => 'target_id',
       ),
     ),
     'locked' => 0,
-    'module' => 'image',
+    'module' => 'entityreference',
     'settings' => array(
-      'default_image' => 0,
-      'uri_scheme' => 'public',
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'image' => 'image',
+        ),
+      ),
+      'target_type' => 'asset',
     ),
     'translatable' => 0,
-    'type' => 'image',
+    'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_featured_news_post'
-  $field_bases['field_featured_news_post'] = array(
+  // Exported field_base: 'field_file_asset'
+  $field_bases['field_file_asset'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_file_asset',
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'file' => 'file',
+        ),
+      ),
+      'target_type' => 'asset',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'field_meta_description'
+  $field_bases['field_meta_description'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_featured_news_post',
-    'foreign keys' => array(),
+    'field_name' => 'field_meta_description',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'metatags_quick',
+    'settings' => array(
+      'max_length' => 255,
+      'meta_name' => 'meta_description',
+    ),
+    'translatable' => 0,
+    'type' => 'metatags_quick',
+  );
+
+  // Exported field_base: 'field_meta_keywords'
+  $field_bases['field_meta_keywords'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_meta_keywords',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'metatags_quick',
+    'settings' => array(
+      'max_length' => 255,
+      'meta_name' => 'meta_keywords',
+    ),
+    'translatable' => 0,
+    'type' => 'metatags_quick',
+  );
+
+  // Exported field_base: 'field_photo_gallery'
+  $field_bases['field_photo_gallery'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_photo_gallery',
     'indexes' => array(
-      'value' => array(
-        0 => 'value',
+      'target_id' => array(
+        0 => 'target_id',
       ),
     ),
     'locked' => 0,
-    'module' => 'list',
+    'module' => 'entityreference',
     'settings' => array(
-      'allowed_values' => array(
-        0 => '',
-        1 => 'Featured',
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'image' => 'image',
+        ),
       ),
-      'allowed_values_function' => '',
+      'target_type' => 'asset',
     ),
     'translatable' => 0,
-    'type' => 'list_boolean',
+    'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'field_video_asset'
+  $field_bases['field_video_asset'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_video_asset',
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'video' => 'video',
+        ),
+      ),
+      'target_type' => 'asset',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
   );
 
   return $field_bases;
