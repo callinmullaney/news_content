@@ -22,13 +22,13 @@ function news_content_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '7',
-        ),
-        'redirect' => array(
           'weight' => '6',
         ),
-        'xmlsitemap' => array(
+        'redirect' => array(
           'weight' => '5',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '4',
         ),
       ),
       'display' => array(),

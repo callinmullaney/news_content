@@ -21,10 +21,10 @@ function news_content_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Attachments',
-    'weight' => '3',
+    'weight' => '81',
     'children' => array(
-      0 => 'field_file_asset',
-      1 => 'field_video_asset',
+      0 => 'field_file_assets',
+      1 => 'field_video_assets',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -50,10 +50,10 @@ function news_content_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Imagery',
-    'weight' => '2',
+    'weight' => '71',
     'children' => array(
-      0 => 'field_featured_image',
-      1 => 'field_photo_gallery',
+      0 => 'field_slide_assets',
+      1 => 'field_image_assets',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -79,7 +79,7 @@ function news_content_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Meta Tags',
-    'weight' => '100',
+    'weight' => '7',
     'children' => array(
       0 => 'field_meta_description',
       1 => 'field_meta_keywords',
@@ -107,7 +107,7 @@ function news_content_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'News Content',
-    'weight' => '0',
+    'weight' => '51',
     'children' => array(
       0 => 'body',
       1 => 'title',
@@ -136,9 +136,12 @@ function news_content_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Organization',
-    'weight' => '1',
+    'weight' => '61',
     'children' => array(
-      0 => 'field_category',
+      0 => 'field_featured_post',
+      1 => 'field_school_nodes',
+      2 => 'field_category_terms',
+      3 => 'field_featured',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
