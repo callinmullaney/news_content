@@ -21,7 +21,7 @@ function news_content_ctools_plugin_api($module = NULL, $api = NULL) {
  */
 function news_content_node_info() {
   $items = array(
-    'news_post' => array(
+    'news' => array(
       'name' => t('News Post'),
       'base' => 'node_content',
       'description' => '',

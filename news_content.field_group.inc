@@ -13,15 +13,15 @@ function news_content_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_attachments|node|news_post|form';
+  $field_group->identifier = 'group_attachments|node|news|form';
   $field_group->group_name = 'group_attachments';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'news_post';
+  $field_group->bundle = 'news';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Attachments',
-    'weight' => '81',
+    'weight' => '3',
     'children' => array(
       0 => 'field_file_assets',
       1 => 'field_video_assets',
@@ -37,23 +37,23 @@ function news_content_field_group_info() {
       'formatter' => 'collapsed',
     ),
   );
-  $export['group_attachments|node|news_post|form'] = $field_group;
+  $export['group_attachments|node|news|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_imagery|node|news_post|form';
+  $field_group->identifier = 'group_imagery|node|news|form';
   $field_group->group_name = 'group_imagery';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'news_post';
+  $field_group->bundle = 'news';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Imagery',
-    'weight' => '71',
+    'weight' => '2',
     'children' => array(
-      0 => 'field_slide_assets',
-      1 => 'field_image_assets',
+      0 => 'field_image_assets',
+      1 => 'field_slide_assets',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -66,20 +66,20 @@ function news_content_field_group_info() {
       'formatter' => 'collapsed',
     ),
   );
-  $export['group_imagery|node|news_post|form'] = $field_group;
+  $export['group_imagery|node|news|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_meta|node|news_post|form';
+  $field_group->identifier = 'group_meta|node|news|form';
   $field_group->group_name = 'group_meta';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'news_post';
+  $field_group->bundle = 'news';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Meta Tags',
-    'weight' => '7',
+    'weight' => '4',
     'children' => array(
       0 => 'field_meta_description',
       1 => 'field_meta_keywords',
@@ -94,20 +94,20 @@ function news_content_field_group_info() {
       ),
     ),
   );
-  $export['group_meta|node|news_post|form'] = $field_group;
+  $export['group_meta|node|news|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_news_content|node|news_post|form';
+  $field_group->identifier = 'group_news_content|node|news|form';
   $field_group->group_name = 'group_news_content';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'news_post';
+  $field_group->bundle = 'news';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'News Content',
-    'weight' => '51',
+    'weight' => '0',
     'children' => array(
       0 => 'body',
       1 => 'title',
@@ -123,25 +123,24 @@ function news_content_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_news_content|node|news_post|form'] = $field_group;
+  $export['group_news_content|node|news|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_organization|node|news_post|form';
+  $field_group->identifier = 'group_organization|node|news|form';
   $field_group->group_name = 'group_organization';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'news_post';
+  $field_group->bundle = 'news';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Organization',
-    'weight' => '61',
+    'weight' => '1',
     'children' => array(
-      0 => 'field_featured_post',
-      1 => 'field_school_nodes',
-      2 => 'field_category_terms',
-      3 => 'field_featured',
+      0 => 'field_category_terms',
+      1 => 'field_featured',
+      2 => 'field_news_category_terms',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -154,7 +153,7 @@ function news_content_field_group_info() {
       'formatter' => 'collapsed',
     ),
   );
-  $export['group_organization|node|news_post|form'] = $field_group;
+  $export['group_organization|node|news|form'] = $field_group;
 
   return $export;
 }

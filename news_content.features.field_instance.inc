@@ -10,9 +10,9 @@
 function news_content_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-news_post-body'
-  $field_instances['node-news_post-body'] = array(
-    'bundle' => 'news_post',
+  // Exported field_instance: 'node-news-body'
+  $field_instances['node-news-body'] = array(
+    'bundle' => 'news',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -55,53 +55,9 @@ function news_content_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_post-field_category_terms'
-  $field_instances['node-news_post-field_category_terms'] = array(
-    'bundle' => 'news_post',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 17,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_category_terms',
-    'label' => 'Category',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'autocomplete_deluxe',
-      'settings' => array(
-        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
-        'delimiter' => '',
-        'limit' => 10,
-        'min_length' => 0,
-        'not_found_message' => 'The term \'@term\' will be added.',
-        'size' => 60,
-      ),
-      'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 11,
-    ),
-  );
-
-  // Exported field_instance: 'node-news_post-field_featured'
-  $field_instances['node-news_post-field_featured'] = array(
-    'bundle' => 'news_post',
+  // Exported field_instance: 'node-news-field_featured'
+  $field_instances['node-news-field_featured'] = array(
+    'bundle' => 'news',
     'default_value' => array(
       0 => array(
         'value' => 0,
@@ -142,9 +98,9 @@ function news_content_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_post-field_file_assets'
-  $field_instances['node-news_post-field_file_assets'] = array(
-    'bundle' => 'news_post',
+  // Exported field_instance: 'node-news-field_file_assets'
+  $field_instances['node-news-field_file_assets'] = array(
+    'bundle' => 'news',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -192,9 +148,9 @@ function news_content_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_post-field_image_assets'
-  $field_instances['node-news_post-field_image_assets'] = array(
-    'bundle' => 'news_post',
+  // Exported field_instance: 'node-news-field_image_assets'
+  $field_instances['node-news-field_image_assets'] = array(
+    'bundle' => 'news',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -242,9 +198,9 @@ function news_content_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_post-field_meta_description'
-  $field_instances['node-news_post-field_meta_description'] = array(
-    'bundle' => 'news_post',
+  // Exported field_instance: 'node-news-field_meta_description'
+  $field_instances['node-news-field_meta_description'] = array(
+    'bundle' => 'news',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -279,9 +235,9 @@ function news_content_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_post-field_meta_keywords'
-  $field_instances['node-news_post-field_meta_keywords'] = array(
-    'bundle' => 'news_post',
+  // Exported field_instance: 'node-news-field_meta_keywords'
+  $field_instances['node-news-field_meta_keywords'] = array(
+    'bundle' => 'news',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -316,9 +272,53 @@ function news_content_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_post-field_slide_assets'
-  $field_instances['node-news_post-field_slide_assets'] = array(
-    'bundle' => 'news_post',
+  // Exported field_instance: 'node-news-field_news_category_terms'
+  $field_instances['node-news-field_news_category_terms'] = array(
+    'bundle' => 'news',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 17,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_news_category_terms',
+    'label' => 'Category',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'autocomplete_deluxe',
+      'settings' => array(
+        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
+        'delimiter' => '',
+        'limit' => 10,
+        'min_length' => 0,
+        'not_found_message' => 'The term \'@term\' will be added.',
+        'size' => 60,
+      ),
+      'type' => 'autocomplete_deluxe_taxonomy',
+      'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance: 'node-news-field_slide_assets'
+  $field_instances['node-news-field_slide_assets'] = array(
+    'bundle' => 'news',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -366,9 +366,9 @@ function news_content_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_post-field_video_assets'
-  $field_instances['node-news_post-field_video_assets'] = array(
-    'bundle' => 'news_post',
+  // Exported field_instance: 'node-news-field_video_assets'
+  $field_instances['node-news-field_video_assets'] = array(
+    'bundle' => 'news',
     'deleted' => 0,
     'description' => '',
     'display' => array(

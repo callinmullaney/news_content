@@ -10,7 +10,7 @@
 function news_content_taxonomy_default_vocabularies() {
   return array(
     'news_category' => array(
-      'name' => 'News Category',
+      'name' => 'NEWS | Category',
       'machine_name' => 'news_category',
       'description' => '',
       'hierarchy' => 0,
